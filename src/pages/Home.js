@@ -9,16 +9,21 @@ class Home extends Component {
   render() {
     return (
       <div>
-      <main>
-        <h1>Close Roast</h1>
-        /* Style this centered over image*/
-
-        <h3> Discover nearby coffeeshops, save your favorites, and forget Starbucks once and for all(if you want)
-        </h3>
-        /*style this centered below Close Roast Title*/
-      </main>
+        <main>
+          <div className="title">
+            Close Roast
+          </div>
+          <div className="subtitle">
+             Discover nearby coffeeshops save your favorites, and forget Starbucks once and for all(if you want)
+          </div>
+        </main>
+        <div className="instructor">
+          <p>Enter your location and some stuff pops off</p>
+        </div>
+        <div className="search-bar">
+        
+        </div>
       </div>
-
     );
   }
 }
