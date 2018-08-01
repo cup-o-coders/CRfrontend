@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {Switch, Route} from 'react-router-dom'
-/*import data from Google API here*/
+import {Switch, Route,Link} from 'react-router-dom';
+import Home from './pages/Home';
+import Results from './pages/Results';
+import Header from './components/Header'
+import User from './pages/User';/*import data from Google API here*/
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path='/Shops' component={Results} />
+          <Route path= '/User' component={User} />
+        </Switch>
       </div>
+
     );
   }
 }
