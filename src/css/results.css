@@ -1,10 +1,9 @@
-.results-container {
+.flex-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
   align-items: center;
-  height: 400px;
   background-color: #ebe9ec;
 }
 
@@ -24,4 +23,8 @@
 .button {
   margin-top: 10px;
   width: 200px;
+}
+
+.create {
+  padding-top: 100px;
 }
