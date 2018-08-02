@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {Switch, Route} from 'react-router-dom'
 import Header from './components/Header.js'
+import Footer from './components/Footer.js'
 /*import data from Google API here*/
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <Footer />
       </div>
     );
   }
