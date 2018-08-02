@@ -9,10 +9,10 @@ class Footer extends Component{
           <p>Close Roast &copy; 2018</p>
         </div>
         <div className="footer-item">
-          <p>Created by CupACoders</p>
+          <p>Created by CupOCoders</p>
         </div>
         <div className="footer-item">
-          <p>Contact: CupACoders@gmail.com</p>
+          <p>Contact: CupOCoders@gmail.com</p>
         </div>
       </div>
     )
