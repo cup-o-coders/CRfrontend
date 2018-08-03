@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
-import {Switch, Route,Link} from 'react-router-dom';
 import '../css/results.css'
+import {Switch, Route,Link} from 'react-router-dom';
+import Shopcard from '../components/shopcard'
 /*import data from Google API here*/
+
+
+
+
+
 
 class Results extends Component {
   render() {
+     console.log(this.props.results);
+  let data = this.props.results
     return (
       <div>
         <div className="flex-container">
@@ -14,7 +22,9 @@ class Results extends Component {
             <h1>Your Matches</h1>
           </div>
           <div className="results-display">
-            <p>Results go Here</p>
+          {data.map(business => {
+					return (<Shopcard key={data.id} business={business} />)
+				})}
           </div>
           <div className="new-search">
             <input type="button" class="button" value="New Search" />
@@ -37,6 +47,9 @@ class Results extends Component {
       </div>
     );
   }
+
 }
+
+
 
 export default Results;
