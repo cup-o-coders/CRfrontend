@@ -33,11 +33,12 @@ class Results extends Component {
         <div className="flex-container">
           <div className="results-title">
             <h1>Your Matches</h1>
-            {data.map(business => {
-    					return (<Shopcard key={data.id} business={business} />)
-    				})}
+
           </div>
           <div className="results-display">
+          {data.map(business => {
+            return (<Shopcard key={data.id} business={business} />)
+          })}
 
           </div>
           <div className="new-search">
