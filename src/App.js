@@ -7,6 +7,7 @@ import Header from './components/Header'
 import User from './pages/User';/*import data from Google API here*/
 import Footer from './components/Footer.js'
 import Data from './data_sample/sample.json'
+import Yelptest from './api/Yelptest';
 
 
 class App extends Component {
@@ -28,6 +29,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
          <Route path='/Results' render={(props)=><Results results={this.state.data}/>} />
           <Route path= '/User' component={User} />
+          <Route path='/yelptest' compoenent={ Yelptest } />
         </Switch>
 
       </div>
