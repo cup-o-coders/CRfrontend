@@ -1,0 +1,30 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  background-color: #ebe9ec;
+}
+
+.results-title {
+  flex-basis: 60px;
+  padding-top: 110px;
+  display: block;
+}
+
+.results-display {
+  background-color: grey;
+  display: block;
+  width: 45%;
+  height: 150px;
+}
+
+.button {
+  margin-top: 10px;
+  width: 200px;
+}
+
+.create {
+  padding-top: 100px;
+}
