@@ -6,6 +6,10 @@ class Yelptest extends Component {
     render(){
         return(
             <div>
+                <form >
+                    <h1>Put in a search!</h1>
+                    <input type="text" name="location" />
+                </form>
             </div>
         );
     }
