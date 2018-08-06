@@ -29,17 +29,22 @@ class Results extends Component {
      console.log(this.props.results);
   let data = this.props.results
     return (
-      <div>
-        <div className="flex-container">
+
+<div className="flex-container">
           <div className="results-title">
             <h1>Your Matches</h1>
-            {data.map(business => {
-    					return (<Shopcard key={data.id} business={business} />)
-    				})}
-          </div>
-          <div className="results-display">
+
 
           </div>
+
+          <div>
+          {data.map(business => {
+            return (<Shopcard key={data.id} business={business} />)
+          })}
+
+          </div>
+
+
           <div className="new-search">
             <input type="button" class="button" value="New Search" />
           </div>
@@ -58,7 +63,8 @@ class Results extends Component {
             </div>
           </div>
         </div>
-      </div>
+
+
     );
   }
 }
