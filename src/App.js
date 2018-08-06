@@ -19,17 +19,15 @@ class App extends Component {
 
     return (
 
-      <div>
+      <div className="flex-container">
         <Header />
-
-        <Footer />
-
+        <div className="flexfooter"><Footer /></div>
+      
         <Switch>
           <Route exact path="/" component={Home} />
-         <Route path='/Results' render={(props)=><Results results={this.state.data}/>} />
+          <Route path='/Results' render={(props)=><Results results={this.state.data}/>} />
           <Route path= '/User' component={User} />
         </Switch>
-
       </div>
 
     );
