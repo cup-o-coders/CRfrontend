@@ -7,7 +7,7 @@ class Header extends Component{
     return (
       <div className="top">
         <div className="header-items left">
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
         </div>
         <div className="header-items center">
           Close Roast

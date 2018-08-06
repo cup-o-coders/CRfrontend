@@ -1,0 +1,22 @@
+main {
+  background-image: url(../images/beans.jpg);
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  height: 400px;
+}
+
+.title {
+  flex-basis: 60px;
+  padding-top: 160px;
+  padding-bottom: 15px;
+  font-size: 85px;
+}
+
+.subtitle {
+  width: 50%;
+  font-size: 25px;
+}
