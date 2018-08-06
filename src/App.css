@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  background-color: #ebe9ec;
+}
+
+.flexfooter {
+  order: 99;
+}

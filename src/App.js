@@ -8,9 +8,9 @@ import Footer from './components/Footer.js'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="flex-container">
         <Header />
-        <Footer />
+        <div className="flexfooter"><Footer /></div>
       </div>
     );
   }
