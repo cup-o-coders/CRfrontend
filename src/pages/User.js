@@ -7,7 +7,25 @@ import {Switch, Route,Link} from 'react-router-dom'
 class User extends Component {
   render() {
     return (
-      <div></div>
+      <div className="flex-container">
+        <div className="greeting">
+          <h1>Hi Props</h1>
+        </div>
+        <div className="user-search">
+          <button type="button">New Search</button>
+        </div>
+        <div className="favorites">
+          <div className="favorites-display">
+            favorites display
+          </div>
+          <div className="favorites-display">
+            favorites display
+          </div>
+          <div className="favorites-display">
+            favorites display
+          </div>
+        </div>
+      </div>
 
     );
   }
