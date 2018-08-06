@@ -28,6 +28,7 @@ class App extends Component {
           <Route path='/Results' render={(props)=><Results results={this.state.data}/>} />
           <Route path= '/User' component={User} />
         </Switch>
+
       </div>
 
     );
