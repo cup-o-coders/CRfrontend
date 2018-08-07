@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Header from './components/Header'
 import User from './pages/User';/*import data from Google API here*/
 import Footer from './components/Footer.js'
+import Data from './data_sample/sample.json'
+import LoginPage from './pages/Login.js'
 
 
 class App extends Component {
@@ -17,13 +19,14 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <div className="flexfooter"><Footer /></div>
-      
+
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path= '/User' component={User} />
+          <Route path ='/login' component={LoginPage}/>
         </Switch>
-
+      <div className="flexfooter"><Footer /></div>
       </div>
 
     );

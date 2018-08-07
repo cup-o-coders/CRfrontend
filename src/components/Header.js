@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/header.css'
+import {Switch, Route,Link} from 'react-router-dom';
 
 
 class Header extends Component{
@@ -13,7 +14,8 @@ class Header extends Component{
           Close Roast
         </div>
         <div className="header-items right">
-          <a href="#">Login</a>
+          <Link to={`/login`}>Login</Link>
+        
         </div>
       </div>
     );
