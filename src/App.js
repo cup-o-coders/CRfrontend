@@ -17,9 +17,8 @@ class App extends Component {
     return (
       <div>
         <Header />
-
-        <Footer />
-
+        <div className="flexfooter"><Footer /></div>
+      
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path= '/User' component={User} />

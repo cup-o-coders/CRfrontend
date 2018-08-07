@@ -1,0 +1,19 @@
+.greeting {
+  flex-basis: 60px;
+  padding-top: 110px;
+  display: block;
+}
+
+.favorites {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.favorites-display {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+
+}

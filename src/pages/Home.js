@@ -41,6 +41,9 @@ class Home extends Component {
   }
 
   render() {
+    const { from } = this.props.location.state || '/'
+    const { clickRedirect } = this.state
+
     return (
       <div>
         <main>
@@ -62,7 +65,20 @@ class Home extends Component {
             )
             })}
         </div>
+      //   <div>
+      //   <form action="/results" method="get">Show results
+      //   </form>
+      // </div>
+      <div>
+      <form onSubmit={this.submitForm}>
+          <button type="submit">Submit</button>
+        </form>
+        {clickRedirect && (
+          <Redirect to={from || '/results'}/>
+        )}
       </div>
+    </div>
+
     );
   }
 }
