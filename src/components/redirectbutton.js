@@ -21,10 +21,11 @@ submitForm = (e) => {
 render(){
   const { from } = this.props.location.state || '/'
   const { clickRedirect } = this.state.clickRedirect
-  const {redirect}=this.state.redirect
+
   return(
     <div>
-    <form onSubmit={this.submitForm}>
+    <form
+    onSubmit={this.submitForm}>
         <button type="submit">Submit</button>
       </form>
       {clickRedirect && (
