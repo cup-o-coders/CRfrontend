@@ -3,16 +3,18 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 class Shopcard extends Component {
+	constructor(props) {
+		super(props)
+		// NOTE: Use this.props.businesses to access properties of businesses
+	}
 	render() {
-		let { business } = this.props
 		return (
-
 				<article>
-					<img src="#" />
+					<img src={this.props.business.image_url} />
 					<div>
-						<h3>{business.name}</h3>
-						<p className="detail">{business.location.display_address}, {business.display_phone}</p>
-						<p>{business.rating}</p>
+						<h3>{this.props.business.name}</h3>
+						<p className="detail">{this.props.business.location.display_address}, {this.props.business.display_phone}</p>
+						<p>{this.props.business.rating}</p>
 					</div>
 				</article>
 

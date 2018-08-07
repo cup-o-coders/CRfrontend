@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
-import {Switch, Route,Link} from 'react-router-dom'
 import '../css/home.css'
+import Shopcard from '../components/shopcard'
+import { getShops } from '../api/index.js'
+
 /*import data from Google API here*/
 
 class Home extends Component {
@@ -32,10 +33,6 @@ class Home extends Component {
   handleNewShop(shopLocation) {
     getShops(shopLocation)
     .then(successShop => {
-        console.log("SUCCESS! New cat: ", successShop);
-        console.log(successShop.businesses[2].name);
-        // let locations = this.state.locations
-        // locations = locations.concat(successShop)
         this.setState({
           newShopSuccess: true,
           locations: successShop.businesses
@@ -54,23 +51,16 @@ class Home extends Component {
              Discover nearby coffeeshops save your favorites, and forget Starbucks once and for all(if you want)
           </div>
         </main>
-        <div className="instructor">
-          <p>Enter your location and some stuff pops off</p>
-        </div>
         <div className="search-bar">
-        <h1>Put in a search!</h1> 
             <form onSubmit={this.submitLocation.bind(this)}>
                 <input type="text" name="location" onChange={this.handleChange.bind(this)} />
                 <input type="submit" value="Get Shops" />
             </form>
             {this.state.locations.map(business => {
               return (
-                <div>
-                  <img src={business.image_url} height="150" width="150"/>
-                  <h3 key={business.id} business={business}>{business.name} is {business.price}</h3>
-                </div>
-              )
-    				})}
+              <Shopcard key={business.id} business={business} />
+            )
+            })}
         </div>
       </div>
     );
