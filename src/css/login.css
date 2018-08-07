@@ -37,9 +37,19 @@ body {
 
 
 .login-hero {
-  background-image: url('../images/cup.jpg');
-  background-size: cover;
-  background-position: center;
   width: 100%;
-  height: 100vh;
+  margin: auto;
+  background-color: #ebe9ec;
+}
+
+.login-hero img {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-container {
+  width: 350px;
+  margin: auto;
 }

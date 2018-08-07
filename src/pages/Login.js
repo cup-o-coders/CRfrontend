@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import '../css/login.css'
+import {Switch, Route,Link,Redirect} from 'react-router-dom'
 
 class LoginPage extends Component{
   constructor(props){
     super(props)
     this.state={
+      clickRedirect: false,
       form:{
         name:'',
         email :'',
@@ -20,25 +22,32 @@ class LoginPage extends Component{
 		this.setState({form: form})
 	}
 
-handleSubmit(event) {
-  console.log('A name was submitted: ' + this.state.form.name);
-  event.preventDefault();
-}
+
+    submitForm = (e) => {
+      e.preventDefault()
+      this.setState({ clickRedirect: true})
+
+    }
 
   render(){
+
+    const { from } = this.props.location.state || '/'
+    const {clickRedirect}  = this.state
+    console.log(clickRedirect)
+
     return(
       <div className="container">
         <div className="login-hero">
-          <img src="../images/cup.jpg" />
+          <img src={require("../images/cup.jpg")} />
         </div>
         <div className="form-container">
-            <form onSubmit={this.handleSubmit.bind(this)}>
+            <form  onSubmit={this.submitForm}  >
               <ul className ="flex-outer">
                 <li>
                   <label>Name</label>
                   <input
                   className="form-item"
-                  placeholder="Enter name here"
+                  placeholder="Name"
                   name="name"
                   type="text"
                   onChange={this.handleChange.bind(this)}
@@ -60,19 +69,22 @@ handleSubmit(event) {
                   <label>Password</label>
                   <input
                   className="form-item"
-                  placeholder="Enter password"
+                  placeholder="Password"
                   name="password"
                   type="password"
                   onChange={this.handleChange.bind(this)}
                   value={this.state.password}
                   />
                 </li>
-                  <div className="clear"></div>
                 <li>
                  <input type="submit" value="Submit" />
                </li>
               </ul>
             </form>
+            {clickRedirect && (
+              <Redirect to={from || '/user'}/>
+            )}
+
         </div>
     </div>
     );
