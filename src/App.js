@@ -13,7 +13,10 @@ import Yelptest from './api/Yelptest'
 class App extends Component {
   constructor(props){
     super(props)
-    this.state= {data:Data.businesses}
+    this.state = {
+      // This can be removed - BH
+      data:Data.businesses
+    }
   }
   render() {
     return (
