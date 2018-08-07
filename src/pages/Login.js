@@ -12,6 +12,7 @@ class LoginPage extends Component{
           onChange={this.handleChange.bind(this)}
           value={this.state.name}
         />
+      </form>
       )
     }
 }
