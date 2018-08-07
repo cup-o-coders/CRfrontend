@@ -8,7 +8,7 @@ class Home extends Component {
   constructor(props){
     super(props)
       this.state= {
-        clickRedirect: false
+        clickRedirect: false,
         redirect:''
       }
     }
@@ -17,6 +17,7 @@ submitForm = (e) => {
   e.preventDefault()
   this.setState({ clickRedirect: true, redirect:'/results'})
 }
+
 render(){
   const { from } = this.props.location.state || '/'
   const { clickRedirect } = this.state.clickRedirect
@@ -31,6 +32,7 @@ render(){
       )}
     </div>
     );
+  }
 }
 
 export default redirectbutton
