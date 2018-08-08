@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../App.css';
 import '../css/home.css'
 import Shopcard from '../components/shopcard'
 import { getShops } from '../api/index.js'
@@ -15,7 +14,7 @@ class Home extends Component {
       newShopSuccess: false
     }
   }
-  
+
   // Update state of the form's location
   handleChange(event) {
     let { location } = this.state.location
@@ -28,7 +27,7 @@ class Home extends Component {
     event.preventDefault()
     this.handleNewShop(this.state.location)
     console.log(this.state.locations);
-    
+
   }
 
   // With the new location, go ahead and update state to reflect the returned elements
@@ -51,9 +50,12 @@ class Home extends Component {
             Close Roast
           </div>
           <div className="subtitle">
-             Discover nearby coffeeshops save your favorites, and forget Starbucks once and for all(if you want)
+             Discovering hidden shrines of vitality
           </div>
         </main>
+        <div className="home-text">
+          <p>Enter your location down below and we will show you all of the coffee shops in your general area! Explore your city and find your new favorite coffee shop!</p>
+        </div>
         <div className="search-bar">
             <form onSubmit={this.submitLocation.bind(this)}>
                 <input type="text" name="location" onChange={this.handleChange.bind(this)} />

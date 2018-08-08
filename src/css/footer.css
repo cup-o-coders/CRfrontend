@@ -1,11 +1,13 @@
-.footer {
+footer {
+  align-self: flex-end;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding-bottom: 20px;
   background-color: #677cd7;
-  border-top-left-radius: 10%;
-  border-top-right-radius: 10%;
-  margin-top: auto
+  /*border-top-left-radius: 10%;
+  border-top-right-radius: 10%;*/
+  margin-top: auto;
+  width: 100%;
 }
 
 .footer-item {

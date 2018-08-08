@@ -14,9 +14,18 @@ main {
   padding-top: 160px;
   padding-bottom: 15px;
   font-size: 85px;
+  font-weight: 900;
 }
 
 .subtitle {
   width: 50%;
   font-size: 25px;
+}
+
+.home-text {
+  text-align: center;
+  width: 45%;
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
