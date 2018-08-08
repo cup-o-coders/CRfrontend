@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import '../css/login.css'
 import {Switch, Route,Link,Redirect} from 'react-router-dom'
+import AuthService from '../services/AuthService'
 
 class LoginPage extends Component{
   constructor(props){
     super(props)
+    this.Auth=new AuthService()
     this.state={
       clickRedirect: false,
       form:{
@@ -25,6 +27,11 @@ class LoginPage extends Component{
 
     submitForm = (e) => {
       e.preventDefault()
+      this.Auth.login(this.state.email,this.state.password)
+      .then(resp =>{this.props.history.replace('/user')
+    })
+    .catch(err=>{alert(err)})
+
       this.setState({ clickRedirect: true})
 
     }
@@ -81,10 +88,10 @@ class LoginPage extends Component{
                </li>
               </ul>
             </form>
-            {clickRedirect && (
-              <Redirect to={from || '/user'}/>
-            )}
-
+        {/*}    // {clickRedirect && (
+            //   <Redirect to={from || '/user'}/>
+            // )}
+*/}
         </div>
     </div>
     );
