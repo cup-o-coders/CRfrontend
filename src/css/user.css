@@ -1,19 +1,25 @@
-.greeting {
-  flex-basis: 60px;
-  padding-top: 110px;
-  display: block;
+.login-hero {
+  width: 100%;
+  margin: auto;
+  background-color: rgba(0,0,0,.6);
 }
 
-.favorites {
-  width: 75%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.login-hero img {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-hero {
+  height: 200px;
+}
+
+
+.greeting {
+  text-align: center;
 }
 
 .favorites-display {
   margin-top: 15px;
-  margin-bottom: 10px;
-  width: 100%;
-
 }

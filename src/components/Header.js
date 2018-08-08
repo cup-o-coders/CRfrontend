@@ -7,12 +7,13 @@ class Header extends Component{
     return (
       <header>
         <Link to={`/`}>Home</Link>
-        <div className="header-items center">
-        Close Roast
-        </div>
-        <nav className="header-items right">
-          <Link to={`/login`}>Login</Link>
-        </nav>
+        <section className="header-logo">
+          <img src={require("../images/logo.png")} />
+        </section>
+        <section className="login-sign">
+          <Link to={`/login`}>Login</Link>/
+          <Link to={'/create'}>Sign Up</Link>
+        </section>
       </header>
     );
   }

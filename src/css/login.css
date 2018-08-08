@@ -12,18 +12,25 @@
   padding: 10px 0px;
 }
 
-form {
+.login-form-container {
+  width: 350px;
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.login-form {
   border: 1px solid black;
   margin: 30px;
   padding: 0px 10px;
   text-align: left;
 }
 
-label {
+.login-form label {
   padding-right: 10px;
 }
 
-input {
+.login-form input {
   float: right;
 }
 
@@ -31,15 +38,10 @@ input {
   clear: both;
 }
 
-body {
-  height: 100%;
-}
-
-
 .login-hero {
   width: 100%;
   margin: auto;
-  background-color: #ebe9ec;
+  background-color: rgba(0,0,0,.6);
 }
 
 .login-hero img {
@@ -47,9 +49,4 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-.form-container {
-  width: 350px;
-  margin: auto;
 }

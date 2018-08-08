@@ -44,31 +44,32 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <main>
-          <div className="title">
+      <main>
+        <section className="page-top">
+          <h1 className="title">
             Close Roast
-          </div>
-          <div className="subtitle">
+          </h1>
+          <h2 className="subtitle">
              Discovering hidden shrines of vitality
-          </div>
-        </main>
-        <div className="home-text">
-          <p>Enter your location down below and we will show you all of the coffee shops in your general area! Explore your city and find your new favorite coffee shop!</p>
-        </div>
+          </h2>
+        </section>
+        <section className="home-text">
+          <p>
+            Enter your location down below and we will show you all of the coffee shops in your general area! Explore your city and find your new favorite coffee shop!
+          </p>
+        </section>
         <div className="search-bar">
             <form onSubmit={this.submitLocation.bind(this)}>
                 <input type="text" name="location" onChange={this.handleChange.bind(this)} />
                 <input type="submit" value="Get Shops" />
             </form>
-            {this.state.locations.map(business => {
-              return (
-              <Shopcard key={business.id} business={business} />
-            )
-            })}
         </div>
-    </div>
-
+        {this.state.locations.map(business => {
+          return (
+          <Shopcard key={business.id} business={business} />
+        )
+        })}
+      </main>
     );
   }
 }
