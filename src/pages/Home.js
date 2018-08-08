@@ -27,12 +27,15 @@ class Home extends Component {
   submitLocation(event) {
     event.preventDefault()
     this.handleNewShop(this.state.location)
+    console.log(this.state.locations);
+    
   }
 
   // With the new location, go ahead and update state to reflect the returned elements
   handleNewShop(shopLocation) {
     getShops(shopLocation)
     .then(successShop => {
+      console.log(successShop)
         this.setState({
           newShopSuccess: true,
           locations: successShop.businesses
