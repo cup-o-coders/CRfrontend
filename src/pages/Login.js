@@ -43,12 +43,15 @@ class LoginPage extends Component{
     console.log(clickRedirect)
 
     return(
-      <div className="container">
-        <div className="login-hero">
+      <main className="container">
+        <section className="login-hero">
           <img src={require("../images/cup.jpg")} />
-        </div>
-        <div className="form-container">
-            <form  onSubmit={this.submitForm}  >
+        </section>
+        <section className="login-form-container">
+          <article>
+            <p>Join Close Roast, create a profile, and create a list of your favorite coffee shops!</p>
+          </article>
+            <form onSubmit={this.submitForm} className="login-form">
               <ul className ="flex-outer">
                 <li>
                   <label>Name</label>
@@ -88,12 +91,12 @@ class LoginPage extends Component{
                </li>
               </ul>
             </form>
-        {/*}    // {clickRedirect && (
+        {/*    // {clickRedirect && (
             //   <Redirect to={from || '/user'}/>
             // )}
-*/}
-        </div>
-    </div>
+        */}
+        </section>
+    </main>
     );
   }
 }

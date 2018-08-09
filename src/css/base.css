@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,900');
+
+html, main, footer, header, section, article, div, ul {
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.flex-container {
+  display: flex;
+}

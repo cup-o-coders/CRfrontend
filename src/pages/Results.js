@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import '../App.css';
 import '../css/results.css'
 import {Switch, Route,Link} from 'react-router-dom';
 import Shopcard from '../components/shopcard'

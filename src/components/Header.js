@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import '../css/header.css'
-import {Switch, Route,Link} from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 class Header extends Component{
   render(){
     return (
-      <div className="top">
-        <div className="header-items left">
-          <a href="/">Home</a>
-        </div>
-        <div className="header-items center">
-          Close Roast
-        </div>
-        <div className="header-items right">
-          <Link to={`/login`}>Login</Link>
-        
-        </div>
-      </div>
+      <header>
+        <Link to={`/`}>Home</Link>
+        <section className="header-logo">
+          <img src={require("../images/logo.png")} />
+        </section>
+        <section className="login-sign">
+          <Link to={`/login`}>Login</Link>/
+          <Link to={'/create'}>Sign Up</Link>
+        </section>
+      </header>
     );
   }
 }
