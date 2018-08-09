@@ -17,3 +17,11 @@ ul {
 .flex-container {
   display: flex;
 }
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
