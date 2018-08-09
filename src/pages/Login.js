@@ -55,15 +55,6 @@ class LoginPage extends Component{
             <form onSubmit= {this.handleFormSubmit.bind(this)} >
               <ul className ="flex-outer">
                 <li>
-                  <label>Name</label>
-                  <input
-                  className="form-item"
-                  placeholder="Name"
-                  name="name"
-                  type="text"
-                  />
-                </li>
-                <li>
                   <label>Email</label>
                   <input
                   className="form-item"
