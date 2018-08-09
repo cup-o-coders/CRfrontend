@@ -59,7 +59,6 @@ class Home extends Component {
           </p>
         </section>
         <div className="search-bar">
-        <i class="fa fa-search"></i>
             <form onSubmit={this.submitLocation.bind(this)}>
                 <input type="text" name="location" className="location" onChange={this.handleChange.bind(this)} />
                 <input type="submit" value="Get Shops" className="submit"/>
