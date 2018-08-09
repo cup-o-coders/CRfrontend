@@ -1,57 +1,56 @@
 import React, { Component } from 'react';
 import '../css/login.css'
-import {Switch, Route,Link,Redirect} from 'react-router-dom'
-import AuthService from '../services/AuthService'
+import { Switch, Route, Link, Redirect } from 'react-router-dom'
+import { addUser } from '../api/index'
 
-class LoginPage extends Component{
+class createUser extends Component{
   constructor(props){
     super(props)
-    this.Auth=new AuthService()
     this.state={
-      clickRedirect: false,
-      form:{
-        name:'',
+      user: {
+        name: '',
         email :'',
-        password:''
+        password:'',
+        password_confirmation: ''
       }
     }
-
   }
 
   handleChange(event){
-		let { form } = this.state
-		form[event.target.name] =event.target.value
-		this.setState({form: form})
+		let { user } = this.state
+		user[event.target.name] = event.target.value
+		this.setState({user: user})
 	}
 
-
-    submitForm = (e) => {
+  submitNewUser(e) {
+  		// get the completed form information from state
       e.preventDefault()
-      this.Auth.login(this.state.email,this.state.password)
-      .then(resp =>{this.props.history.replace('/user')
-    })
-    .catch(err=>{alert(err)})
-
-      this.setState({ clickRedirect: true})
-
-    }
+      addUser(this.state)
+  	}
+    // submitForm = (e) => {
+    //   e.preventDefault()
+    //   this.Auth.login(this.state.email,this.state.password)
+    //   .then(resp =>{this.props.history.replace('/user')
+    // })
+    // .catch(err=>{alert(err)})
+    //
+    //   this.setState({ clickRedirect: true})
+    //
+    // }
 
   render(){
 
-    const { from } = this.props.location.state || '/'
-    const {clickRedirect}  = this.state
-    console.log(clickRedirect)
+    // const { from } = this.props.location.state || '/'
+    // const {clickRedirect}  = this.state
+    // console.log(clickRedirect)
 
     return(
-      <main className="container">
-        <section className="login-hero">
+      <div className="container">
+        <div className="login-hero">
           <img src={require("../images/cup.jpg")} />
-        </section>
-        <section className="login-form-container">
-          <article>
-            <p>Join Close Roast, create a profile, and create a list of your favorite coffee shops!</p>
-          </article>
-            <form onSubmit={this.submitForm} className="login-form">
+        </div>
+        <div className="form-container">
+            <form onSubmit={this.submitNewUser.bind(this)}>
               <ul className ="flex-outer">
                 <li>
                   <label>Name</label>
@@ -87,18 +86,25 @@ class LoginPage extends Component{
                   />
                 </li>
                 <li>
+                  <label>Password Confirmation</label>
+                  <input
+                  className="form-item"
+                  placeholder="Password"
+                  name="password_confirmation"
+                  type="password"
+                  onChange={this.handleChange.bind(this)}
+                  value={this.state.password_confirmation}
+                  />
+                </li>
+                <li>
                  <input type="submit" value="Submit" />
                </li>
               </ul>
             </form>
-        {/*    // {clickRedirect && (
-            //   <Redirect to={from || '/user'}/>
-            // )}
-        */}
-        </section>
-    </main>
+        </div>
+    </div>
     );
   }
 }
 
-export default LoginPage
+export default createUser;
