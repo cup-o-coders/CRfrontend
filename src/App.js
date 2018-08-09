@@ -9,6 +9,9 @@ import Footer from './components/Footer.js'
 // import Data from './data_sample/sample.json'
 import LoginPage from './pages/Login.js'
 import createUser from './components/createUser'
+import AuthService from './services/AuthService'
+
+const Auth = new AuthService()
 
 class App extends Component {
   constructor(props){
@@ -20,12 +23,17 @@ class App extends Component {
     return (
       <div className="page-wrapper">
         <Header />
+        {Auth.loggedIn() ?
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path= '/User' component={User} />
-          <Route path ='/login' component={LoginPage}/>
-          <Route path = '/create' component={createUser}/>
         </Switch>
+        : <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path = '/create' component={createUser}/>
+        <Route path ='/login' component={LoginPage}/>
+        </Switch>
+      }
         <Footer />
       </div>
 

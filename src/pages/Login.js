@@ -6,41 +6,42 @@ import AuthService from '../services/AuthService'
 class LoginPage extends Component{
   constructor(props){
     super(props)
-    this.Auth=new AuthService()
-    this.state={
-      clickRedirect: false,
-      form:{
-        name:'',
+    this.Auth = new AuthService()
+    this.state = {
         email :'',
         password:''
       }
     }
 
-  }
-
-  handleChange(event){
-		let { form } = this.state
-		form[event.target.name] =event.target.value
-		this.setState({form: form})
-	}
+    handleChange(event){
+  		this.setState({ [event.target.name]: event.target.value })
+  	}
 
 
-    submitForm = (e) => {
-      e.preventDefault()
-      this.Auth.login(this.state.email,this.state.password)
-      .then(resp =>{this.props.history.replace('/user')
+    handleFormSubmit(e){
+    e.preventDefault()
+    this.Auth.login(this.state.email,this.state.password)
+    .then(res =>{
+      this.props.history.replace('/')
     })
-    .catch(err=>{alert(err)})
-
-      this.setState({ clickRedirect: true})
-
+    .catch(err =>{ alert(err) })
     }
 
-  render(){
+    //
+    // submitForm = (e) => {
+    //   e.preventDefault()
+    //   this.Auth.login(this.state.email,this.state.password)
+    //   .then(resp =>{this.props.history.replace('/user')
+    // })
+    // .catch(err=>{alert(err)})
+    //   this.setState({ clickRedirect: true})
+    // }
 
-    const { from } = this.props.location.state || '/'
-    const {clickRedirect}  = this.state
-    console.log(clickRedirect)
+  render(){
+    //
+    // const { from } = this.props.location.state || '/'
+    // const {clickRedirect}  = this.state
+    // console.log(clickRedirect)
 
     return(
       <main className="container">
@@ -51,7 +52,7 @@ class LoginPage extends Component{
           <article>
             <p>Join Close Roast, create a profile, and create a list of your favorite coffee shops!</p>
           </article>
-            <form onSubmit={this.submitForm} className="login-form">
+            <form onSubmit= {this.handleFormSubmit.bind(this)} >
               <ul className ="flex-outer">
                 <li>
                   <label>Name</label>
@@ -60,8 +61,6 @@ class LoginPage extends Component{
                   placeholder="Name"
                   name="name"
                   type="text"
-                  onChange={this.handleChange.bind(this)}
-                  value={this.state.name}
                   />
                 </li>
                 <li>
@@ -91,10 +90,6 @@ class LoginPage extends Component{
                </li>
               </ul>
             </form>
-        {/*    // {clickRedirect && (
-            //   <Redirect to={from || '/user'}/>
-            // )}
-        */}
         </section>
     </main>
     );
