@@ -9,16 +9,23 @@ class Shopcard extends Component {
 		// NOTE: Use this.props.businesses to access properties of businesses
 	}
 
-	const base = "https://www.google.com/maps/dir/?api=1"
+	const base = "https://www.google.com/maps/dir/?api=1&"
+
+	function getCurrentPos() {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			return position.coords.latitude + " " + position.coords.longitude
+		})
+	}
 
 	function locationSearch() {
-		yelpLoc = this.props.business.location.display_address[0] + "%2C" + this.props.business.location.display_address[1]
-     yelpParams = {
-       term: "coffee",
-       location: params[:location],
-       open_now: true,
-       limit: 10
-     }
+		yelpLoc = this.props.business.location.display_address[0] + " %2C" + this.props.business.location.display_address[1]
+		currentLoc = getCurrentPos()
+		origin = "origin=" + currentLoc
+		destination = "&destination=" + encodeURI(yelpLoc)
+		travelmode = "&travelmode=driving"
+		navigator.geolocation.getCurrentPosition
+
+		//https://www.google.com/maps/dir/?api=1&origin=2820%20Camino%20Del%20Rio%20S,%20San%20Diego,%20CA%2092108&destination=1270%20Morena%20Blvd,%20San%20Diego,%20CA%2092110
 	 }
 
 	render() {
