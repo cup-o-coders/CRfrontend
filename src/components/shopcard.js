@@ -3,29 +3,27 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import '../css/shopcard.css'
 
+const base = "https://www.google.com/maps/dir/?api=1&"
+
 class Shopcard extends Component {
 	constructor(props) {
 		super(props)
-		// NOTE: Use this.props.businesses to access properties of businesses
 	}
 
-	const base = "https://www.google.com/maps/dir/?api=1&"
-
-	function getCurrentPos() {
+	getCurrentPos() {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			return position.coords.latitude + " " + position.coords.longitude
 		})
 	}
 
-	function locationSearch() {
-		yelpLoc = this.props.business.location.display_address[0] + " %2C" + this.props.business.location.display_address[1]
-		currentLoc = getCurrentPos()
-		origin = "origin=" + currentLoc
-		destination = "&destination=" + encodeURI(yelpLoc)
-		travelmode = "&travelmode=driving"
-		navigator.geolocation.getCurrentPosition
+	locationSearch() {
+		let yelpLoc = this.props.business.location.display_address[0] + this.props.business.location.display_address[1]
+		let currentLoc = this.getCurrentPos()
+		let origin = "origin=" + currentLoc
+		let destination = "&destination=" + encodeURI(yelpLoc)
+		let travelmode = "&travelmode=driving"
 
-		//https://www.google.com/maps/dir/?api=1&origin=2820%20Camino%20Del%20Rio%20S,%20San%20Diego,%20CA%2092108&destination=1270%20Morena%20Blvd,%20San%20Diego,%20CA%2092110
+		window.open(`${base}${origin}${destination}${travelmode}`)
 	 }
 
 	render() {
@@ -37,9 +35,11 @@ class Shopcard extends Component {
 						<p className="detail">{this.props.business.location.display_address[0]}, {this.props.business.location.display_address[1]},<br /> {this.props.business.display_phone}</p>
 						<p>Rating: {this.props.business.rating}</p>
 					</div>
-					<input type="button" value="Call" />
+					<form action={`tel:${this.props.business.display_phone}`}>
+						<button type="submit">Call</button>
+					</form>
 					<input type="button" value="Favorite" />
-					<input type="button" value="Directions" />
+					<input type="button" value="Directions" onClick={this.locationSearch.bind(this)} />
 				</article>
 		)
 	}
