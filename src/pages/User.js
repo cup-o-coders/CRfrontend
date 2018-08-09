@@ -12,18 +12,25 @@ class User extends Component {
         </section>
         <section className="greeting">
           <h1>Hi Props</h1>
-          <div className="user-search">
+          <nav className="user-search">
             <button type="button">New Search</button>
-          </div>
+          </nav>
           <div className="favorites">
-            <div className="favorites-display">
-              favorites display
+            <div className="favorites container">
+              <div className="favorites-display">
+                favorites display
+              </div>
+              <div className="favorites-display">
+                favorites display
+              </div>
             </div>
-            <div className="favorites-display">
-              favorites display
-            </div>
-            <div className="favorites-display">
-              favorites display
+            <div className="favorites-container">
+              <div className="favorites-display">
+                favorites display
+              </div>
+              <div className="favorites-display">
+                favorites display
+              </div>
             </div>
           </div>
         </section>
