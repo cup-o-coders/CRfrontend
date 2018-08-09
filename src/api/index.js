@@ -46,7 +46,7 @@ let getFavorites = function() {
 
 let createFavorite = function(favorite) {
   return fetch(BASE + '/favorites', {
-    body: JSON.stringify(cat),  // <- we need to stringify the json for fetch
+    body: JSON.stringify(favorite),  // <- we need to stringify the json for fetch
     headers: {  // <- We specify that we're sending JSON, and expect JSON back
       'Content-Type': 'application/json'
     },

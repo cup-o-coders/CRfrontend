@@ -10,11 +10,15 @@ import Footer from './components/Footer.js'
 import LoginPage from './pages/Login.js'
 import createUser from './components/createUser'
 import {getFavorites,createFavorite} from './api/index.js'
+import Shopcard from './components/shopcard'
+
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state = {
+      favorites:[],
+      newFave: false
     }
   }
   componentWillMount(){
@@ -31,8 +35,8 @@ handleNewFavorite(FavoriteInfo) {
   createFavorite(FavoriteInfo)
   .then(successFavorite => {
       console.log("SUCCESS! New favorite: ", successFavorite);
-      let favorites = this.state.Favorites
-      cats.push(successFavorite)
+      let {favorites} = this.state.favorites
+      favorites.push(successFavorite)
       this.setState({
             newFave: true,
             favorites:favorites
@@ -47,7 +51,8 @@ handleNewFavorite(FavoriteInfo) {
       <div className="page-wrapper">
         <Header />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home}
+          />
           <Route path= '/User' component={User} />
           <Route path ='/login' component={LoginPage}/>
           <Route path = '/create' component={createUser}/>
