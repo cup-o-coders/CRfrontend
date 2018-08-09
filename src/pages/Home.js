@@ -60,15 +60,18 @@ class Home extends Component {
         </section>
         <div className="search-bar">
             <form onSubmit={this.submitLocation.bind(this)}>
-                <input type="text" name="location" onChange={this.handleChange.bind(this)} />
-                <input type="submit" value="Get Shops" />
+                <input type="text" name="location" className="location" onChange={this.handleChange.bind(this)} />
+                <input type="submit" value="Get Shops" className="submit"/>
             </form>
         </div>
-        {this.state.locations.map(business => {
-          return (
-          <Shopcard key={business.id} business={business} />
-        )
-        })}
+        <div className="shopflex">
+          {this.state.locations.map(business => {
+            return (
+            <Shopcard key={business.id} business={business} />
+          )
+          })}
+
+        </div>
       </main>
     );
   }

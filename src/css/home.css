@@ -10,12 +10,36 @@
   padding-bottom: 50px;
 }
 
+/*-------------SEARCH BAR----------*/
+
+.search-bar {
+  padding-bottom: 100px;
+}
+
 .search-bar form {
   margin: 0 auto;
   width: 40%;
   text-align: center;
 }
 
+.search-bar input {
+  display: block;
+  margin: 5px auto;
+}
+
+.location {
+  width: 50%;
+}
+
+.submit {
+  width: 30%;
+}
+
+/*-----PASTE----*/
+
+
+
+/*----- END SEARCH BAR----*/
 .title {
   flex-basis: 60px;
   padding-top: 160px;
@@ -35,4 +59,12 @@
   margin: auto;
   padding-top: 80px;
   padding-bottom: 40px;
+}
+
+.shopflex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(8,64,129,.6);
+
 }

@@ -11,7 +11,9 @@ import LoginPage from './pages/Login.js'
 import createUser from './components/createUser'
 import {getFavorites,createFavorite} from './api/index.js'
 import Shopcard from './components/shopcard'
+import AuthService from './services/AuthService'
 
+const Auth = new AuthService()
 
 class App extends Component {
   constructor(props){
@@ -50,13 +52,20 @@ handleNewFavorite(FavoriteInfo) {
     return (
       <div className="page-wrapper">
         <Header />
+        {Auth.loggedIn() ?
         <Switch>
           <Route exact path="/" component={Home}
           />
           <Route path= '/User' component={User} />
-          <Route path ='/login' component={LoginPage}/>
-          <Route path = '/create' component={createUser}/>
+          <Route component={LoginPage} />
         </Switch>
+        : <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path = '/create' component={createUser}/>
+        <Route path ='/login' component={LoginPage}/>
+        <Route component={LoginPage} />
+        </Switch>
+      }
         <Footer />
       </div>
 
