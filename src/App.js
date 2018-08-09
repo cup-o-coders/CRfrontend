@@ -9,6 +9,7 @@ import Footer from './components/Footer.js'
 // import Data from './data_sample/sample.json'
 import LoginPage from './pages/Login.js'
 import createUser from './components/createUser'
+import {getFavorites,createFavorite} from './api/index.js'
 
 class App extends Component {
   constructor(props){
@@ -16,6 +17,31 @@ class App extends Component {
     this.state = {
     }
   }
+  componentWillMount(){
+  getFavorites()
+    .then(APIfavorites => {
+      this.setState({
+        favorites: APIfavorites
+      })
+    }
+  )
+}
+
+handleNewFavorite(FavoriteInfo) {
+  createFavorite(FavoriteInfo)
+  .then(successFavorite => {
+      console.log("SUCCESS! New favorite: ", successFavorite);
+      let favorites = this.state.Favorites
+      cats.push(successFavorite)
+      this.setState({
+            newFave: true,
+            favorites:favorites
+  })
+})
+}
+
+
+
   render() {
     return (
       <div className="page-wrapper">
