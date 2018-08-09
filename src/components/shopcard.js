@@ -3,35 +3,43 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import '../css/shopcard.css'
 
+const base = "https://www.google.com/maps/dir/?api=1&"
+
 class Shopcard extends Component {
 	constructor(props) {
 		super(props)
-		// NOTE: Use this.props.businesses to access properties of businesses
 	}
+
+	getCurrentPos() {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			return position.coords.latitude + " " + position.coords.longitude
+		})
+	}
+
+	locationSearch() {
+		let yelpLoc = this.props.business.location.display_address[0] + this.props.business.location.display_address[1]
+		let currentLoc = this.getCurrentPos()
+		let origin = "origin=" + currentLoc
+		let destination = "&destination=" + encodeURI(yelpLoc)
+		let travelmode = "&travelmode=driving"
+
+		window.open(`${base}${origin}${destination}${travelmode}`)
+	 }
+
 	render() {
 		return (
 				<article>
-					<section className="left shop-img">
-						<img src={this.props.business.image_url} />
-					</section>
-					<section className="right shop-text">
-						<section>
-							<h3>{this.props.business.name}</h3>
-							<p className="detail">{this.props.business.location.display_address[0]}, {this.props.business.location.display_address[1]},<br /> {this.props.business.display_phone}</p>
-							<p>Rating: {this.props.business.rating}</p>
-						</section>
-						<nav className="interact">
-							<div className="interact-buttons">
-								<img src={require("../images/call.png")} />
-							</div>
-							<div className="interact-buttons">
-								<img src={require("../images/heart.png")} />
-							</div>
-							<div className="interact-buttons">
-								<img src={require("../images/compass.png")} />
-							</div>
-						</nav>
-					</section>
+					<img src={this.props.business.image_url} />
+					<div>
+						<h3>{this.props.business.name}</h3>
+						<p className="detail">{this.props.business.location.display_address[0]}, {this.props.business.location.display_address[1]},<br /> {this.props.business.display_phone}</p>
+						<p>Rating: {this.props.business.rating}</p>
+					</div>
+					<form action={`tel:${this.props.business.display_phone}`}>
+						<input type="image" src={require('../images/call.png')} className="interact-buttons" />
+					</form>
+					<input type="image" src={require('../images/heart.png')} className="interact-buttons" value="Favorite" />
+					<input type="image" src={require('../images/compass.png')} className="interact-buttons" value="Directions" onClick={this.locationSearch.bind(this)} />
 				</article>
 		)
 	}
