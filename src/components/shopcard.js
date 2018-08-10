@@ -59,14 +59,18 @@ submitFavorite(event) {
 							<p className="detail">{this.props.business.location.display_address[0]}, {this.props.business.location.display_address[1]},<br /> {this.props.business.display_phone}</p>
 							<p>Rating: {this.props.business.rating}</p>
 						</div>
-						<form action={`tel:${this.props.business.display_phone}`}>
-							<input type="image" src={require('../images/call.png')} className="interact-buttons" />
+					</section>
+					<div className="clear"></div>
+					<div className="icons">
+						<form action={`tel:${this.props.business.display_phone}`} className="phone">
+						<input type="image" src={require('../images/call.png')} className="interact-buttons phone-size" />
 						</form>
 						{this.Auth.loggedIn() &&
 							<input type="image" src={require('../images/heart.png')} className="interact-buttons" value="Favorite" onClick= {this.submitFavorite.bind(this)} />
 						}
 						<input type="image" src={require('../images/compass.png')} className="interact-buttons" value="Directions" onClick={this.locationSearch.bind(this)} />
-					</section>
+					</div>
+
 				</article>
 		)
 	}

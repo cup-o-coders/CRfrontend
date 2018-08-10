@@ -8,7 +8,7 @@ class Footer extends Component{
         <div className="footer-item">
           <p>Close Roast &copy; 2018</p>
         </div>
-        <div className="footer-item">
+        <div className="footer-item created-by">
           <p>Created by CupOCoders</p>
         </div>
         <div className="footer-item">
