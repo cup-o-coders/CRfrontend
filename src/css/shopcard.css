@@ -75,9 +75,22 @@ article img {
 @media only screen
   and (max-device-width: 1024px)
   and (-webkit-min-device-pixel-ratio: 1) {
-    .shop-text-container form {
-      display: inline-block;
-      width: 50%;
+    .icons {
+      width: 100%;
     }
+
+    .icons img {
+      width: 33.3%;
+    }
+
+    .icons form {
+      display: inline-block;
+      width: 34%;
+    }
+
+    .phone-size {
+      width: 82%;
+    }
+
 
 }
