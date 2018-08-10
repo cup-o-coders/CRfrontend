@@ -57,7 +57,7 @@ submitFavorite(event) {
 							<p className="detail">{this.props.business.location.display_address[0]}, {this.props.business.location.display_address[1]},<br /> {this.props.business.display_phone}</p>
 							<p>Rating: {this.props.business.rating}</p>
 						</div>
-						<form action={`tel:${this.props.business.display_phone}`}>
+						<form action={`tel:${this.props.business.display_phone}`} className="phone">
 							<input type="image" src={require('../images/call.png')} className="interact-buttons" />
 						</form>
 						<input type="image" src={require('../images/heart.png')} className="interact-buttons" value="Favorite" onClick= {this.submitFavorite.bind(this)} />

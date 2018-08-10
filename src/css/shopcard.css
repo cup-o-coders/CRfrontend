@@ -28,12 +28,24 @@ article img {
 
 /*-------INTERACT NAV----------*/
 
+.shop-text-container form  {
+  display: none;
+}
+
+.phone {
+  display: none;
+}
+
 .shop-img-container {
   width: 40%;
 }
 
 .shop-text-container {
-  width: 50%;
+  width: 60%;
+}
+
+.shop-text-container img {
+  width: 33%;
 }
 
 
@@ -56,4 +68,16 @@ article img {
   margin: 0 auto;
   width: 40%;
   display: inline-block;
+}
+
+/*---------MOBILE----------*/
+
+@media only screen
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .shop-text-container form {
+      display: inline-block;
+      width: 50%;
+    }
+
 }
