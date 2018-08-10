@@ -48,18 +48,21 @@ submitFavorite(event) {
 	render() {
 		return (
 				<article>
-					<img src={this.props.business.image_url} />
-					<div>
-						<h3>{this.props.business.name}</h3>
-						<p className="detail">{this.props.business.location.display_address[0]}, {this.props.business.location.display_address[1]},<br /> {this.props.business.display_phone}</p>
-						<p>Rating: {this.props.business.rating}</p>
-					</div>
-					<form action={`tel:${this.props.business.display_phone}`}>
-						<button type="submit">Call</button>
-					</form>
-
-					<input type="button" value="Favorite" onClick= {this.submitFavorite.bind(this)}/>
-					<input type="button" value="Directions" onClick={this.locationSearch.bind(this)} />
+					<section className="left shop-img-container">
+						<img src={this.props.business.image_url} />
+					</section>
+					<section className="right shop-text-container">
+						<div>
+							<h3>{this.props.business.name}</h3>
+							<p className="detail">{this.props.business.location.display_address[0]}, {this.props.business.location.display_address[1]},<br /> {this.props.business.display_phone}</p>
+							<p>Rating: {this.props.business.rating}</p>
+						</div>
+						<form action={`tel:${this.props.business.display_phone}`}>
+							<input type="image" src={require('../images/call.png')} className="interact-buttons" />
+						</form>
+						<input type="image" src={require('../images/heart.png')} className="interact-buttons" value="Favorite" onClick= {this.submitFavorite.bind(this)} />
+						<input type="image" src={require('../images/compass.png')} className="interact-buttons" value="Directions" onClick={this.locationSearch.bind(this)} />
+					</section>
 				</article>
 		)
 	}

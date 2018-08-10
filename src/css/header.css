@@ -1,16 +1,30 @@
 header {
   flex: 2;
-  background-color: rgba(0,0,0,.6);
-  position: fixed;
+  background-color: rgba(0,0,0,1);
+  position: center;
   height: 75px;
   width: 100%;
   color: #fff;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 30px;
   padding-top: 10px;
 }
 
+.login {
+    color: white;
+    float: left;
+    padding-top: 20px;
+}
+
+.create {
+    color: white;
+    float: left;
+    padding-top: 20px;
+    padding-left: 7px;
+    padding-right: 15px;
+
+}
 header a {
   text-decoration: none;
   color: #fff;
@@ -19,8 +33,24 @@ header a {
 
 .header-logo {
   width: 70px;
+  position: fixed, center;
+  padding-left: 15px;
 }
 
 .header-logo img {
   width: 100%;
+}
+
+.logout {
+    color: white;
+    float: left;
+    padding-top: 20px;
+    padding-left: 7px;
+    padding-right: 15px;
+}
+
+.profile {
+    color: white;
+    float: left;
+    padding-top: 20px;
 }
