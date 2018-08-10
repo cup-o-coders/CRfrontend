@@ -17,7 +17,6 @@ let getShops = function(shops) {
 
 
 let addUser = function(newUser) {
-  console.log(newUser);
 	return fetch(BASE + '/users', {
 		body: JSON.stringify(newUser),
 		headers: {
@@ -27,10 +26,9 @@ let addUser = function(newUser) {
 	})
 	.then((r) => {
 		let json = r.json()
-		console.log(r);
 		return json
 	})
-  .catch(err => console.log(err))
+  .catch(err => alert(err))
 }
 
 let getFavorites = function() {

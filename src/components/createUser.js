@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import '../css/login.css'
 import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import { addUser } from '../api/index'
+import AuthService from '../services/AuthService'
+
 
 class createUser extends Component{
   constructor(props){
     super(props)
+    this.Auth = new AuthService()
     this.state={
       user: {
         name: '',
@@ -26,24 +29,17 @@ class createUser extends Component{
   		// get the completed form information from state
       e.preventDefault()
       addUser(this.state)
-  	}
-    // submitForm = (e) => {
-    //   e.preventDefault()
-    //   this.Auth.login(this.state.email,this.state.password)
-    //   .then(resp =>{this.props.history.replace('/user')
-    // })
-    // .catch(err=>{alert(err)})
-    //
-    //   this.setState({ clickRedirect: true})
-    //
-    // }
+      .then(res =>{
+        console.log(res);
+        this.props.history.replace('/login')
+        this.Auth.login(this.state.user.email, this.state.user.password)
+        .then(res => {
+        this.props.history.replace('/')
+      })
+    })
+  }
 
   render(){
-
-    // const { from } = this.props.location.state || '/'
-    // const {clickRedirect}  = this.state
-    // console.log(clickRedirect)
-
     return(
       <div className="container">
         <div className="login-hero">
