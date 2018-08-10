@@ -3,12 +3,14 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import '../css/shopcard.css'
 import {createFavorite} from '../api/index'
+import AuthService from '../services/AuthService'
 
 const base = "https://www.google.com/maps/dir/?api=1&"
 
 class Shopcard extends Component {
 	constructor(props) {
 		super(props)
+		this.Auth = new AuthService()
 		this.state={
 			business:{
 				image_url:this.props.business.image_url,
@@ -60,7 +62,9 @@ submitFavorite(event) {
 						<form action={`tel:${this.props.business.display_phone}`}>
 							<input type="image" src={require('../images/call.png')} className="interact-buttons" />
 						</form>
-						<input type="image" src={require('../images/heart.png')} className="interact-buttons" value="Favorite" onClick= {this.submitFavorite.bind(this)} />
+						{this.Auth.loggedIn() &&
+							<input type="image" src={require('../images/heart.png')} className="interact-buttons" value="Favorite" onClick= {this.submitFavorite.bind(this)} />
+						}
 						<input type="image" src={require('../images/compass.png')} className="interact-buttons" value="Directions" onClick={this.locationSearch.bind(this)} />
 					</section>
 				</article>
