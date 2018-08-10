@@ -11,6 +11,7 @@ import LoginPage from './pages/Login.js'
 import createUser from './components/createUser'
 import AuthService from './services/AuthService'
 
+
 const Auth = new AuthService()
 
 class App extends Component {
