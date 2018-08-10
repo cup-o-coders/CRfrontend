@@ -43,7 +43,7 @@ class createUser extends Component{
         <div className="signup-intro">
             Enter your information to signup!
         </div>
-        <div className="form-container">
+        <div className="login-form-container">
             <form onSubmit={this.submitNewUser.bind(this)}>
               <ul className ="flex-outer">
                 <li className="name-label">
@@ -91,7 +91,7 @@ class createUser extends Component{
                   />
                 </li>
                 <li>
-                 <input className="submit" type="submit" value="Submit" />
+                 <input type="submit" value="Submit" />
                </li>
               </ul>
             </form>
