@@ -27,7 +27,6 @@ class Home extends Component {
     event.preventDefault()
     if (this.state.location !== '') {
     this.handleNewShop(this.state.location)
-    console.log(this.state.locations)
     } else {
       alert("Please enter a location!")
     }
@@ -37,7 +36,6 @@ class Home extends Component {
   handleNewShop(shopLocation) {
     getShops(shopLocation)
     .then(successShop => {
-      console.log(successShop)
         this.setState({
           newShopSuccess: true,
           locations: successShop.businesses
