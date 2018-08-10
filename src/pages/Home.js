@@ -25,8 +25,12 @@ class Home extends Component {
   // Handle the submission of location and pass to handle it
   submitLocation(event) {
     event.preventDefault()
+    if (this.state.location !== '') {
     this.handleNewShop(this.state.location)
     console.log(this.state.locations)
+    } else {
+      alert("Please enter a location!")
+    }
   }
 
   // With the new location, go ahead and update state to reflect the returned elements
