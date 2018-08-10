@@ -34,6 +34,7 @@ let addUser = function(newUser) {
 }
 
 let getFavorites = function() {
+  console.log()
     // the function name getCats is intended to remind you of the restful rails route --> GET '/cats'.
     return fetch(BASE + '/favorites') // this would be equivalent to going to localhost:3000/cats in your browser. Do that - - what do you see?
         .then((resp) => {

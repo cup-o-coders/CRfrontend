@@ -20,7 +20,7 @@ class User extends Component {
     getFavorites()
       .then(APIfavorites => {
         this.setState({
-          favorites: APIfavorites
+          favorites: APIfavorites.businesses
 
         })
       }
