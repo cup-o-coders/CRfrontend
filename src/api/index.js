@@ -28,6 +28,9 @@ let addUser = function(newUser) {
 		let json = r.json()
 		return json
 	})
+  .then(json => {
+    Auth.setToken(json.jwt);
+  })
   .catch(err => alert(err))
 }
 

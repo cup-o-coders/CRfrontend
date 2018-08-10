@@ -30,11 +30,7 @@ class createUser extends Component{
       e.preventDefault()
       addUser(this.state)
       .then(res =>{
-        this.props.history.replace('/login')
-        this.Auth.login(this.state.user.email, this.state.user.password)
-        .then(res => {
         this.props.history.replace('/')
-      })
     })
   }
 
