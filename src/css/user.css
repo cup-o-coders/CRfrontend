@@ -11,10 +11,30 @@
   margin-right: auto;
 }
 
-.user-hero {
-  height: 200px;
+.name-label, .email-label, .password-label, .confirm-label {
+    justify-content: center;
+    text-align: center
 }
 
+
+.form-item {
+    /* font-family: 'Open Sans Condensed', arial, sans; */
+    /* width: 200px; */
+    padding: 10px;
+    background: #FFFFFF;
+    margin: 5px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.label {
+    justify-content: center;
+    text-align: center;
+}
 
 .greeting {
   text-align: center;
@@ -23,4 +43,19 @@
 
 .favorites-display {
   margin-top: 15px;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.signup-intro {
+    text-align: center;
+    font-size: 30px
+
 }
