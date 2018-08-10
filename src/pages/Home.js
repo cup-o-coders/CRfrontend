@@ -70,7 +70,6 @@ class Home extends Component {
             <Shopcard key={business.id} business={business} />
           )
           })}
-
         </div>
       </main>
     );
