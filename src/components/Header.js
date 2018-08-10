@@ -20,10 +20,10 @@ class Header extends Component{
         <section className="login-sign">
             {Auth.loggedIn() ?
                 <ul>
-                    <li>
-                        <Link to='/user'>Profile</Link>
+                    <li className="profile">
+                        <Link to='/user'>Profile</Link> |
                     </li>
-                    <li onClick={this.handleLogout}>
+                    <li onClick={this.handleLogout} className="logout">
                         <Link to='/'>Logout</Link>
                     </li>
                 </ul>

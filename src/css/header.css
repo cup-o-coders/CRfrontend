@@ -40,3 +40,17 @@ header a {
 .header-logo img {
   width: 100%;
 }
+
+.logout {
+    color: white;
+    float: left;
+    padding-top: 20px;
+    padding-left: 7px;
+    padding-right: 15px;
+}
+
+.profile {
+    color: white;
+    float: left;
+    padding-top: 20px;
+}
