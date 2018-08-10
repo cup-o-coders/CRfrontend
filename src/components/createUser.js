@@ -49,11 +49,14 @@ class createUser extends Component{
         <div className="login-hero">
           <img src={require("../images/cup.jpg")} />
         </div>
+        <div className="signup-intro">
+            Enter your information to signup!
+        </div>
         <div className="form-container">
             <form onSubmit={this.submitNewUser.bind(this)}>
               <ul className ="flex-outer">
-                <li>
-                  <label>Name</label>
+                <li className="name-label">
+                  <label>Name: </label>
                   <input
                   className="form-item"
                   placeholder="Name"
@@ -63,8 +66,8 @@ class createUser extends Component{
                   value={this.state.name}
                   />
                 </li>
-                <li>
-                  <label>Email</label>
+                <li className="email-label">
+                  <label>Email: </label>
                   <input
                   className="form-item"
                   placeholder="Email"
@@ -74,8 +77,8 @@ class createUser extends Component{
                   value={this.state.email}
                   />
                 </li>
-                <li>
-                  <label>Password</label>
+                <li className="password-label">
+                  <label>Password: </label>
                   <input
                   className="form-item"
                   placeholder="Password"
@@ -85,11 +88,11 @@ class createUser extends Component{
                   value={this.state.password}
                   />
                 </li>
-                <li>
-                  <label>Password Confirmation</label>
+                <li className="confirm-label">
+                  <label>Password Confirmation: </label>
                   <input
                   className="form-item"
-                  placeholder="Password"
+                  placeholder="Confirm Password"
                   name="password_confirmation"
                   type="password"
                   onChange={this.handleChange.bind(this)}
@@ -97,7 +100,7 @@ class createUser extends Component{
                   />
                 </li>
                 <li>
-                 <input type="submit" value="Submit" />
+                 <input className="submit" type="submit" value="Submit" />
                </li>
               </ul>
             </form>
