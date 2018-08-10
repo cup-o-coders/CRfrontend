@@ -68,3 +68,18 @@
   background-color: rgba(8,64,129,.6);
 
 }
+
+/*---------MOBILE----------*/
+
+@media only screen
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .submit {
+      width: 100%;
+    }
+
+    .location {
+      border: 1px black solid;
+    }
+  }
