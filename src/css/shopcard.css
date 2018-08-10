@@ -1,4 +1,10 @@
+.shop-img {
+  width: 50%;
+}
 
+.shop-text {
+  width: 50%;
+}
 
 article {
   width: 40%;
@@ -15,7 +21,39 @@ article {
 }
 
 article img {
-  width: 50%;
+  width: 100%;
   border: 1px black solid;
   border-radius: 5%;
+}
+
+/*-------INTERACT NAV----------*/
+
+.shop-img-container {
+  width: 40%;
+}
+
+.shop-text-container {
+  width: 50%;
+}
+
+
+.interact {
+  width: 100%;
+  height: 100px;
+  float: right;
+  padding-top: 20px;
+}
+
+.interact-buttons {
+  display: flex;
+  display: inline-block;
+  width: 33%;
+}
+
+.interact-buttons img {
+  border-color: white;
+  align-items: center;
+  margin: 0 auto;
+  width: 40%;
+  display: inline-block;
 }
