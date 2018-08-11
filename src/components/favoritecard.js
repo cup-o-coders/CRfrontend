@@ -36,12 +36,13 @@ class Favorite extends Component {
 
 
 	render() {
+    console.log(this.props.favorite)
 		return (
 				<article>
 					<img src={this.props.favorite.image_url} />
 					<div>
 						<h3>{this.props.favorite.name}</h3>
-						<p className="detail">{this.props.favorite.location.display_address[0]}, {this.props.favorite.location.display_address[1]},<br /> {this.props.favorite.display_phone}</p>
+						<p className="detail">{this.props.favorite.display_address},<br /> {this.props.favorite.display_phone}</p>
 						<p>Rating: {this.props.favorite.rating}</p>
 					</div>
 					<form action={`tel:${this.props.favorite.display_phone}`}>

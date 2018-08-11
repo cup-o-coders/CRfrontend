@@ -3,7 +3,10 @@ import {Switch, Route,Link} from 'react-router-dom';
 import '../css/user.css'
 import Favorite from '../components/favoritecard'
 import {getFavorites} from '../api/index'
+import AuthService from '../services/AuthService'
 
+
+const auth= new AuthService()
 const base = "https://www.google.com/maps/dir/?api=1&"
 /*import data from Google API here*/
 
@@ -17,14 +20,17 @@ class User extends Component {
 
 
     componentWillMount(){
-    getFavorites()
-      .then(APIfavorites => {
-        this.setState({
-          favorites: APIfavorites.businesses
-
-        })
-      }
-    )
+    // let id=auth.getUserId()
+    auth.getFavorites()
+    .then(res => this.setState({favorites:res}))
+    .catch(err =>console.log(err))
+    // getFavorites(id)
+    //   .then(APIfavorites => {
+    //     this.setState({
+    //       favorites: APIfavorites.businesses
+    //
+    //     })
+    //   }
   }
 
     render() {
