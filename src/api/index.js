@@ -1,7 +1,9 @@
 import AuthService from '../services/AuthService'
 // the address of our rails backend, saved as a constant value, because we never want to accidently change it
 const BASE = 'https://infinite-hollows-72288.herokuapp.com';
+// const BASE = 'http://localhost:3000';
 const Auth = new AuthService()
+
 let getShops = function(shops) {
   return fetch(BASE + `/yelp/search?location=${shops}`,
   {
