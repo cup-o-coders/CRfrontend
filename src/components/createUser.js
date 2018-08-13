@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import '../css/login.css'
 import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import { addUser } from '../api/index'
-import AuthService from '../services/AuthService'
+// import AuthService from '../services/AuthService'
 
+// const domain = "https://infinite-hollows-72288.herokuapp.com"
 
 class createUser extends Component{
   constructor(props){
     super(props)
-    this.Auth = new AuthService()
+    // this.Auth = new AuthService(domain)
     this.state={
       user: {
         name: '',
