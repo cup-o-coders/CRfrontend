@@ -12,10 +12,10 @@ class Shopcard extends Component {
 		super(props)
 		this.Auth = new AuthService()
 		this.state={
-			business:{
+			favorite:{
 				image_url:this.props.business.image_url,
 				name:this.props.business.name,
-				display_address:this.props.business.display_address,
+				display_address: this.props.business.location.display_address.join(" "),
 				display_phone:this.props.business.display_phone,
 				rating:this.props.business.rating
 			}
@@ -38,14 +38,14 @@ class Shopcard extends Component {
 		window.open(`${base}${origin}${destination}${travelmode}`)
 	 }
 
-submitFavorite(event) {
-	let business=this.state.business
- event.preventDefault()
+	 submitFavorite(event) {
+		 let favorite=this.state
+ 	 		event.preventDefault()
 
- createFavorite(business)
+ 			createFavorite(favorite)
 
- // this.props.handleNewFavorite(this.props.business)
- }
+ 			// this.props.handleNewFavorite(this.props.business)
+ 		}
 
 	render() {
 		return (

@@ -1,10 +1,39 @@
 import React, { Component } from 'react';
 import {Switch, Route,Link} from 'react-router-dom';
 import '../css/user.css'
+import Favorite from '../components/favoritecard'
+import {getFavorites} from '../api/index'
+import AuthService from '../services/AuthService'
+
+
+const auth= new AuthService()
+const base = "https://www.google.com/maps/dir/?api=1&"
 /*import data from Google API here*/
 
 class User extends Component {
-  render() {
+  constructor(props){
+    super(props)
+    this.state={
+      favorites:[]
+    }
+  }
+
+
+    componentWillMount(){
+    // let id=auth.getUserId()
+    auth.getFavorites()
+    .then(res => this.setState({favorites:res}))
+    .catch(err =>console.log(err))
+    // getFavorites(id)
+    //   .then(APIfavorites => {
+    //     this.setState({
+    //       favorites: APIfavorites.businesses
+    //
+    //     })
+    //   }
+  }
+
+    render() {
     return (
       <main className="user-hero">
         <section className="login-hero">
@@ -12,24 +41,17 @@ class User extends Component {
         </section>
         <section className="greeting">
           <h1>Hi Props</h1>
-          <nav className="user-search">
-            <button type="button">New Search</button>
-          </nav>
+
           <div className="favorites">
             <div className="favorites container">
               <div className="favorites-display">
-                favorites display
-              </div>
-              <div className="favorites-display">
-                favorites display
-              </div>
-            </div>
-            <div className="favorites-container">
-              <div className="favorites-display">
-                favorites display
-              </div>
-              <div className="favorites-display">
-                favorites display
+              {this.state.favorites.map(favorite => {
+                return (
+                <Favorite key={favorite.name} favorite={favorite} />
+              )
+              })}
+
+
               </div>
             </div>
           </div>

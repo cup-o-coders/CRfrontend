@@ -22,6 +22,15 @@ export default class AuthService {
       })
     }
 
+    getFavorites() {
+      let id = this.getUserId()
+      console.log(":::USER ID:::", id);
+      return this.fetch(`${this.domain}/user_favorites/${id}`)
+        .then(res =>{ return Promise.resolve(res)})
+
+        .catch(err => console.log(err))
+    }
+
     loggedIn() { // A check to see if user is logged in
       const token = this.getToken()
       return !!token && !this.isTokenExpired(token)
