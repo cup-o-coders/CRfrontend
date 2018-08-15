@@ -27,10 +27,12 @@ let addUser = function(newUser) {
 		method: "POST"
 	})
 	.then((r) => {
-		let json = r.json()
+    let json = r.json()
+    console.log("1"+json);
 		return json
 	})
   .then(json => {
+    console.log("2"+json);
     Auth.setToken(json.jwt);
   })
   .catch(err => alert(err))
