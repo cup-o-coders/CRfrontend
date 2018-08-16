@@ -26,8 +26,9 @@ export default class AuthService {
       let id = this.getUserId()
       console.log(":::USER ID:::", id);
       return this.fetch(`${this.domain}/user_favorites/${id}`)
-        .then(res =>{ return Promise.resolve(res)})
-
+        .then(res =>{ 
+          return Promise.resolve(res)
+        })
         .catch(err => console.log(err))
     }
 

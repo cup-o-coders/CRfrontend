@@ -36,6 +36,8 @@ let addUser = function(newUser) {
     Auth.setToken(json.jwt);
   })
   .catch(err => alert(err))
+  console.log();
+  
 }
 
 // let getFavorites = function(id) {
