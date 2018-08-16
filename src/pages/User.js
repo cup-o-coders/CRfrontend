@@ -5,14 +5,17 @@ import Favorite from '../components/favoritecard'
 import {getFavorites} from '../api/index'
 import AuthService from '../services/AuthService'
 
+const domain = "https://infinite-hollows-72288.herokuapp.com"
 
-const auth= new AuthService()
+
+// const auth= new AuthService()
 const base = "https://www.google.com/maps/dir/?api=1&"
 /*import data from Google API here*/
 
 class User extends Component {
   constructor(props){
     super(props)
+    this.Auth = new AuthService(domain)
     this.state={
       favorites:[]
     }
@@ -21,7 +24,7 @@ class User extends Component {
 
     componentWillMount(){
     // let id=auth.getUserId()
-    auth.getFavorites()
+    this.Auth.getFavorites()
     .then(res => this.setState({favorites:res}))
     .catch(err =>console.log(err))
     // getFavorites(id)
