@@ -43,7 +43,7 @@ class User extends Component {
           <img src={require("../images/cafe.jpeg")} />
         </section>
         <section className="greeting">
-          <h1>Hi Props</h1>
+        
 
           <div className="favorites">
             <div className="favorites container">
